@@ -1,0 +1,5 @@
+Django==1.4
+Markdown==2.1.1
+South==0.7.5
+django-tagging-ng==0.3.3
+wsgiref==0.1.2

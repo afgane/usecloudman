@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load tagging_tags %}
+{% load get_latest %}
+{% block content %}
+    <div class="content-strip-header">
+        <h1>Blog</h1>
+        <span class="descriptive-page-text">
+            Only the most recent 3 posts are shown - to see all, click <a href="/blog/all/">here</a>.
+        </span>
+    </div>
+    {% get_latest blog.Entry 3 as recent_posts %}
+    {% for object in recent_posts %}
+        <div class="content-strip" style="margin: 10px 0;">
+            <div class="content-strip-header">
+                <a href="/blog{{object.get_absolute_url}}">
+                    <h2 style="padding-left: 0;">{{ object.title }}</h2>
+                </a>
+                <div class="right">Published: {{ object.pub_date|date:"D d M Y" }}</div>                
+            </div>
+            <div class="linija"></div>
+            {{ object.body_html|truncatewords_html:"20"|safe }}
+            {% if object.get_tags %}
+                <div class="right">
+                    Tagovi: {% for tag in object.get_tags %}
+                        <a href="/blog/tags/{{tag.name|slugify}}/">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </div>        
+                {# <p>tags: {% for tag in object.get_tags %} #}
+                {#     <a href="/blog/tags/{{tag|slugify}}/">{{tag.name}}</a>{% if not forloop.last %}, {% endif %} #}
+                {# {% endfor %}</p>             #}
+            {% endif %}
+            {# Show link to 'Nastavi citati' only if the post has been truncated #}
+            {% ifnotequal object.body_html|truncatewords_html:10|length object.body_html|truncatewords_html:11|length %}
+               <a href="/blog{{object.get_absolute_url}}">Continue...</a><br/>
+            {% endifnotequal %}
+        </div>
+    {% endfor %}
+{% endblock %}
+

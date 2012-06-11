@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load tagging_tags %}
+{% block content %}
+<div class="content-strip-header">
+    <h1>Blog</h1>
+</div>
+{% for object in object_list %}
+    <div class="content-strip" style="margin: 10px 0;">
+        <div class="content-strip-header">
+            <a href="/blog{{object.get_absolute_url}}">
+                <h2 style="padding-left: 0;">{{ object.title }}</h2>
+            </a>
+            <div class="right">Published: {{ object.pub_date|date:"D d M Y" }}</div>
+        </div>
+        <div class="linija"></div>
+        {{ object.body_html|truncatewords_html:"20"|safe }}
+        {% if object.get_tags %}
+            <div class="right">
+                Tags: {% for tag in object.get_tags %}
+                    <a href="/blog?tag={{tag.name|slugify}}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        {# Show link to 'Continue' only if the post has been truncated #}
+        {% ifnotequal object.body_html|truncatewords_html:10|length object.body_html|truncatewords_html:11|length %}
+           <a href="/blog{{object.get_absolute_url}}">Continue...</a><br/>
+        {% endifnotequal %}
+    </div>
+{% endfor %}
+{# Add pagination #}
+<div class="pagination">
+    <span class="page-links">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+    </span>
+    <span class="current">
+        Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+    </span>
+    <span class="page-links">
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
+
