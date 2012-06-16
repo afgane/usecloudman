@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load tagging_tags %}
 {% block content %}
-<div class="content-strip-header">
-    <h1>Blog</h1>
+<div id="tagline">
+    CloudMan's <em>features and uses</em>
 </div>
 {% for object in object_list %}
     <div class="content-strip" style="margin: 10px 0;">
@@ -10,21 +10,16 @@
             <a href="/blog{{object.get_absolute_url}}">
                 <h2 style="padding-left: 0;">{{ object.title }}</h2>
             </a>
-            <div class="right">Published: {{ object.pub_date|date:"D d M Y" }}</div>
+            <div class="right published">Added: {{ object.pub_date|date:"d M Y" }}</div>
         </div>
-        <div class="linija"></div>
-        {{ object.body_html|truncatewords_html:"20"|safe }}
+        {{ object.body_html|safe }}
         {% if object.get_tags %}
-            <div class="right">
+            <div class="tags">
                 Tags: {% for tag in object.get_tags %}
                     <a href="/blog?tag={{tag.name|slugify}}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
                 {% endfor %}
             </div>
         {% endif %}
-        {# Show link to 'Continue' only if the post has been truncated #}
-        {% ifnotequal object.body_html|truncatewords_html:10|length object.body_html|truncatewords_html:11|length %}
-           <a href="/blog{{object.get_absolute_url}}">Continue...</a><br/>
-        {% endifnotequal %}
     </div>
 {% endfor %}
 {# Add pagination #}

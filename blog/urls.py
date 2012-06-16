@@ -21,7 +21,7 @@ urlpatterns = patterns('django.views.generic.date_based',
         MonthArchiveView.as_view()),
     url(r'(?P<year>\d{4})/$',
         IndexView.as_view()),
-    url(r'^$', IndexView.as_view()),
+    url(r'^$', IndexView.as_view(), {}, "blog"),
     # url(r'^all/$', ArchiveView.as_view()),
     
     # (r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{1,2})/(?P<slug>[-\w]+)/$',

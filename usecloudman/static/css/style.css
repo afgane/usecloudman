@@ -25,6 +25,10 @@ a {
     color: inherit;
 }
 
+.right {
+    float: right;
+}
+
 #masthead {
     margin-top: 0;
     width: 100%;
@@ -64,6 +68,10 @@ a {
     padding-right: 1em;
     padding-bottom: 1em;
     margin-bottom: 0;
+}
+#footer {
+    width: 60em;
+    margin: 0 auto;
 }
 
 #tagline {
@@ -155,3 +163,23 @@ a {
     padding-top: 9px;
     list-style: circle;
 }
+
+.pagination {
+    margin: 0 auto;
+    width: 20em;
+    text-align: center;
+    color: #777;
+    font-size: 80%;
+}
+
+.published {
+    color: #777;
+    margin-top: -3em;
+    font-size: 80%;
+}
+
+.tags {
+    color: #777;
+    font-size: 80%;
+}
+
