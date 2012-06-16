@@ -1,1 +1,106 @@
-usecloudman templates/index.html
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>The CloudMan Project: Cloud clusters for everyone</title>
+    <link href="{{ STATIC_URL }}css/style.css" media="screen" rel="Stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-3755240-11']);
+        _gaq.push(['_setDomainName', 'usecloudman.org']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="everything">
+    {% include "header.html" %}
+
+  <div id="content">
+
+    <div id="tagline">
+      Cloud clusters <em>for&nbsp;everyone.</em>
+    </div>
+
+    <p id="subtag">
+        <b>CloudMan</b> is a cloud manager that
+        orchestrates the steps required to provision and manage compute
+        clusters on a cloud infrastructure, all through a web browser. In minutes,
+        you can use a vanilla SGE cluster or a <a href="http://galaxyproject.org/wiki/Admin/Cloud">
+        complete bioinformatics analysis environment</a>.
+    </p> 
+
+
+    <table id="big_links">
+      <tbody><tr id="big_links_titles">
+    <td>
+      <a href="http://biocloudcentral.org/">Use CloudMan</a>
+    </td>
+    <td>
+      <a href="http://galaxyproject.org/wiki/Admin/Cloud">Learn CloudMan</a>
+    </td>
+    <td>
+      <a href="./publications">Publications</a>
+    </td>
+      </tr>
+      <tr id="big_links_images">
+    <td>
+      <a href="http://biocloudcentral.org/">
+        <img src="./static/images/usecloudman.jpg" height="128" alt="Use CloudMan">
+      </a>
+    </td>
+    <td>
+      <a href="http://wiki.g2.bx.psu.edu/CloudMan">
+        <img src="./static/images/learncloudman.png" height="125" alt="Learn">
+      </a>
+    </td>
+    <td>
+      <a href="./publications">
+        <img src="./static/images/publications.jpg" height="125" alt="Publications">
+      </a>
+    </td>
+      </tr>
+      <tr id="big_links_small_text">
+    <td>
+      <a href="http://biocloudcentral.org/">Create a cluster</a>,
+      <a href="http://bcbio.wordpress.com/2011/08/19/distributed-exome-analysis-pipeline-with-cloudbiolinux-and-cloudman/">look at an example</a>
+    </td>
+    <td>
+      <a href="http://usecloudman.org/presentations/CloudMan_overview.pdf">Overview</a>,
+      <a href="http://wiki.g2.bx.psu.edu/CloudMan">wiki</a>,
+      <!-- <a href="https://bitbucket.org/galaxy/cloudman/">source</a>, -->
+      <a href="http://usecloudman.org/screencasts/">screencasts</a>
+    </td>
+    <td>
+      <a href="./publications">Papers</a>,
+      <a href="./publications">presentations</a>
+    </td>
+      </tr>
+  </tbody></table>
+
+  <div id="detailed_text">
+
+    <div id="acks">
+      <p>
+          The <a href="http://wiki.g2.bx.psu.edu/CloudMan/Team">CloudMan Team</a>
+          is a part of <a href="http://www.irb.hr/en/cir/">CIR</a> at <a href="http://www.irb.hr/eng/">
+          Ruđer Bošković Institute (RBI)</a>, the <a href="http://www.biology.emory.edu/">
+          Biology</a> and <a href="http://www.mathcs.emory.edu/">Mathematics and Computer Science</a>
+          departments at <a href="http://www.emory.edu/">Emory University</a>, and
+          <a href="http://www.bx.psu.edu/">BX</a> at <a href="http://www.psu.edu/"> Penn State</a>.
+          The CloudMan Project is supported in part by 
+          <a href="http://www.nsf.gov/">NSF</a>, <a href="http://www.genome.gov/">NHGRI</a>,
+          <a href="http://www.huck.psu.edu/">The Huck Institutes of the Life Sciences</a>,
+          <a href="http://www.ics.psu.edu/">The Institute for CyberScience at Penn State</a>,
+          and <a href="http://www.emory.edu/">Emory University</a>.
+    </p></div>
+  </div>
+</div>
+</div>
+</body>

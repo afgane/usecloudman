@@ -7,6 +7,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # url(r'^$', 'usecloudman.views.home', name='home'),
     url(r'^$', direct_to_template, {'template': 'index.html'}, "home"),
+    url(r'^publications$', direct_to_template, {'template': 'publications.html'}, "publications"),
+    url(r'^screencasts$', direct_to_template, {'template': 'screencasts.html'}, "screencasts"),
     # url(r'^usecloudman/', include('usecloudman.foo.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^comments/', include('django.contrib.comments.urls')),
