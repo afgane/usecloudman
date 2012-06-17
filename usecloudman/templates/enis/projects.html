@@ -1,0 +1,97 @@
+{% extends "enis/base.html" %}
+{% block content %}
+<div class="main">
+  <h1>Current Projects</h1>
+  <h3>Galaxy CloudMan</h3>
+  <p>I primarily work on the <a href="http://usegalaxy.org/cloud" target="_blank">Galaxy CloudMan project</a>: CloudMan is a 
+    manager for coordinating the cloud infrastructure required to run the 
+    <a href="http://usegalaxy.org" target="_blank">Galaxy application</a>. However, CloudMan is more than that: it provides (1) a framework 
+    for enabling applications to run on the cloud and utilize the elasticity of the underlying infrastructure and (2) an easy-to-use,
+    web-based interface for end users to control their personal cloud compute cluster. 
+    Internally, CloudMan is designed to be a standalone application capable of orchestrating all the steps required to dynamically create
+    and manage a compute cluster on a remote resource provider while requiring no computational expertise and no infrastructure to setup. </p>
+  <p>Currently, CloudMan is operating on the Amazon's <a href="http://aws.amazon.com/ec2/" target="_blank">Elastic Compute Cloud</a> (EC2) infrastructure. The source code is available from <a href="http://bitbucket.org/galaxy/cloudman/" target="_blank">here</a> and the instructions on how to use it are available <a target="_blank" "http://usegalaxy.org/cloud">here</a>.</p>
+  <p>Research benefits realized as part of the development of CloudMan focus around usability and availability of a specific tool 
+    (in current case, the entire Galaxy application) to anyone in need of additional or periodic compute power. From the more 
+    technical standpoint, CloudMan utilizes scalability offered by cloud computing and will try to optimize the capabilities of 
+    resources to the workload demand of the given Galaxy instance. This alleviates users of CloudMan (and used application) to 
+    concern themselves with the details of actual compute hardware (i.e., rather than asking &quot;How many compute nodes 
+    would you like to start for this cluster?&quot;, suggest: &quot;(a) This job (or workload) can be completed in X hours 
+    for Y dollars or M hours and N dollars; which do you prefer? (b) User provides threshold values but then CloudMan automatically 
+    scales size of the cluster to match workload demand while incorporating tool requirements and resource capabilities).</p>
+  <h5>Related Talks</h5>
+  <ul>
+    <li>"Enabling NGS Analysis with(out) the Infrastructure", Bioinformatics Open Source Conference (BOSC), Vienna, July 15-16, 2011. 
+        [<a href="http://userwww.service.emory.edu/~eafgan/content/CloudMan_EnisAfgan_BOSC2011abstract.pdf">Abstract</a>]
+        [<a href="http://userwww.service.emory.edu/~eafgan/content/ppt/CloudMan_EnisAfgan_BOSC2011.pdf">PDF</a>]
+    </li>
+    <li>"CloudMan: Galaxy on the Cloud", Galaxy Community Conference, Lunteren, the Netherlands, May 26, 2011. [<a href="http://wiki.g2.bx.psu.edu/GCC2011?action=AttachFile&do=get&target=CloudManGalaxyOnTheCloud.pdf">PDF</a>]</li>
+    <li>"Dynamically Scalable, Accessible Analysis for High-Throughput Sequence Data", Bio-IT World, Boston, MA, April 13, 2011. [<a href="./content/ppt/EnisAfgan_CloudMan_BioIT_2011.pdf">PDF</a>]</li>
+    <li>"NGS Analyses with Galaxy on the Cloud", Intelligent Systems for Molecular Biology, Boston, MA, July 12, 2010. (live demo)</li>
+    <li>"Deploying Galaxy on the Cloud", Bioinformatics Open Source Conference (BOSC), Boston, MA, July 9, 2010. [<a href="./content/ppt/EnisAfgan_BOSC_2010.pdf">PDF</a>]</li>
+    <!-- <li>"Deploying Galaxy on the Cloud", Galaxy Developer's Conference, Cold Spring Harbor, NY, May 15-17, 2010. [<a href="./content/ppt/EnisAfgan_GConCloud_2010.pdf">PDF</a>]</li> -->
+    <li>"Discovery of human heteroplasmic sites enabled by an accessible interface to Cloud-computing infrastructure", Biology of Genomes, Cold Spring Harbor, NY, May 11-15, 2010. (presented by <a href="http://jamestaylor.org/" target="_blank">James Taylor</a>) [<a href="http://bx.mathcs.emory.edu/outgoing/Taylor_BiologyOfGenomes_2010.pdf">PDF</a>]</li>
+  </ul>
+  <h5>Related Publications</h5>
+  <ul>
+    <li>Afgan E., Baker D., Coraor N., Chapman B., Nekrutenko A., Taylor J., &quot;Galaxy CloudMan: Delivering Cloud Compute Clusters,&quot; BMC Bioinformatics, Vol 11, Issue 12, 2010. [<a href="http://www.biomedcentral.com/1471-2105/11/S12/S4">PDF</a>]</li>
+  </ul>
+  <ul>
+      <li>H. Goto, B. Dickins, E. Afgan, I. M. Paul, J. Taylor, K. D. Makova, and A. Nekrutenko, "Dynamics of mitochondrial heteroplasmy in three families investigated via a repeatable re-sequencing study," Genome Biology, vol. 12, issue R59, 2011. [<a target="_blank" href="http://genomebiology.com/2011/12/6/R59/abstract">Open Access</a>]</li>
+  </ul>
+  <ul>
+      <li>Afgan E., J. Goecks, D. Baker, N. Coraor, the Galaxy Team, A. Nekrutenko, and J. Taylor, "Galaxy - a Gateway to Tools in e-Science," in <em>Guide to e-Science: Next Generation Scientific Research and Discovery </em>, K. Yang, Ed., ed: Springer, 2011, p. 145-177. [<a linkindex="57" href="http://userwww.service.emory.edu/~eafgan/content/Galaxy_eScienceGateway.pdf" title="Galaxy eScience Gateway" rel="nofollow">PDF</a>] [<a href="http://www.springerlink.com/content/x725qk571lv53845/" target="_blank">Book</a>]</li>
+  </ul>
+  <h5>Posters</h5>
+  <ul>
+  <li>
+    <p>Afgan E., Baker D., The Galaxy Team, Nekrutenko A., Taylor J., &ldquo;The Elastic Analysis with Galaxy on the Cloud,&rdquo; Beyond the Genome, Boston, MA, Oct 11-13, 2010. <a href="http://userwww.service.emory.edu/~eafgan/content/papers/BeyondTheGenome2010_poster.pdf">PDF</a></p>
+  </li>
+  </ul>
+<h5>Other's Tweets</h5>
+    <div class="tweet_container">
+        <p>
+            <a href="http://twitter.com/#!/GigaScience" target="_blank">GigaSciene</a> EA: Includes >100 tools from cloud biolinux plus additional NGS tools from galaxy. 700GB reference genome data.<br />
+            <span class="tweet_time_link"><a href="http://twitter.com/#!/GigaScience/status/92177221220974592" target="_blank">Jul 16th, 2011</a></span>
+        </p>
+    </div>
+    <div class="tweet_container">
+        <p>
+            <a href="http://twitter.com/#!/GigaScience" target="_blank">GigaSciene</a> EA: Cloudman can deploy a completely configured galaxy cluster in a matter of minutes. Simple wizard-guided setup.<br />
+            <span class="tweet_time_link"><a href="http://twitter.com/#!/GigaScience/status/92176755149897728" target="_blank">Jul 16th, 2011</a></span>
+        </p>
+    </div>
+    <div class="tweet_container">
+        <p>
+            <a href="http://twitter.com/simon_andrews" target="_blank">simon_andrews</a> Blown away by Galaxy cloud demo. 20 mins to configure a cluster from scratch and run an analysis. <a href="http://twitter.com/search?q=%23ISMB2010" target="_blank">#ISMB2010</a> <br />
+            <span class="tweet_time_link"><a href="http://twitter.com/simon_andrews/status/18378796587" target="_blank">5:05 PM Jul 12th, 2010</a> via Echofon</span>
+        </p>
+    </div>
+    <div class="tweet_container">
+        <p>RT @<a href="http://twitter.com/32nm" target="_blank">32nm</a>: 
+        <a href="http://galaxy.psu.edu/dev2010/" target="_blank">http://galaxy.psu.edu/dev2010/</a>
+        07:35 Enis Afgan: "Deploying Galaxy on the Cloud"<br />
+        <span class="tweet_time_link"><a href="http://twitter.com/jxtx/status/14064558848">8:38 PM May 15th, 2010</a> via API</span>
+    </p></div>
+  <br />
+  <h3>Machine Image Deployment (mi-deployment)</h3>
+  <p>With the continuous materialization of virtualization technologies, there is an increased need to streamline
+     the process of the machine image (MI) configuration and deployment process. Moreover, this process should be
+     customizable and easily realized. This project provides a Pyhton <a href="http://docs.fabfile.org/0.9.1/" traget="_blank">Fabric</a>-based
+     solution that tries to achieve these aims.
+  <p>More specifically, <em>mi-deployment</em> provides means to automate the process of a machine configuration, including deployment of desired tools and data. Currently, mi-deployment is targeted at the Galaxy CloudMan project. 
+     The base operating system it expects is <a href="http://releases.ubuntu.com/lucid/" target="_blank">Ubuntu 10.04</a>,
+     but should be easily portable to other similar systems. With time, this project will evolve to be applicable
+     to a wider variety of operating systems supporting the ability to take any (virtualized) system and configure
+     it based on the demand. The repository with the source code for this project is available 
+     <a href="https://bitbucket.org/afgane/mi-deployment" target="_blank">here</a>.</p>
+
+  <h1>Previous Projects</h1>
+  <p>A list and details about projects I have worked on in the past are available <a href="http://www.cis.uab.edu/ccl/index.php/Students:Enis#Affiliated_projects">here</a>.<br />
+  </p>
+</div>
+
+<div id="footer">
+<p>Last updated: July 25, 2011.</p>
+</div>
+{% endblock %}

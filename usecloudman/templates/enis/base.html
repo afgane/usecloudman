@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />    
+    <meta name="keywords" content=""></meta>
+    <meta name="description" content=""></meta>
+    <meta http-equiv="imagetoolbar" content="no" />
+    <link rel="shortcut icon" href="{{ STATIC_URL }}enis/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}enis/css/easy.css" media="screen" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}enis/css/easyprint.css" media="print" />
+    <script type="text/javascript" src="{{ STATIC_URL }}enis/js/jquery.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}enis/js/easy.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}enis/js/main.js"></script>
+
+    <title>{% block title %}Enis Afgan{% endblock %}</title>
+    {% block extrahead %}{% endblock %}
+</head>
+
+<body>
+<div id="container">
+    <div id="header">
+        {% block header %}
+            {% include "enis/header.html" %}
+        {% endblock %}
+    </div>
+    <div id="messages">
+        {% block messages %}
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endblock %}
+    </div>
+    {% block index-content %} {# index page has a slightly different layout so handle it separately #}
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    {% endblock %}
+    <footer>
+        {% block footer %}{% include "footer.html" %}{% endblock %}
+    </footer>
+</div>
+</body>
+</html>
+
