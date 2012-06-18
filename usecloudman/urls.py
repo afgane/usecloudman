@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic.simple import direct_to_template
+import settings
 
 from django.contrib import admin
 admin.autodiscover()
@@ -22,4 +23,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^blog/', include('blog.urls')),
+    # Needed to be able to run this app with gunicorn and have it serve static content
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': settings.STATICFILES_DIRS[0], 'show_indexes':True}),
 )
