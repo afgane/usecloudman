@@ -1,6 +1,13 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic.simple import direct_to_template
+import django
 import settings
+import os
+
+# Get the path for the static admin files on the system so the URLs
+# can be properly captured below
+admin_media_url = settings.ADMIN_MEDIA_PREFIX.lstrip('/') + '(?P<path>.*)$'
+admin_media_path = os.path.join(django.__path__[0], 'contrib', 'admin', 'static', 'admin')
 
 from django.contrib import admin
 admin.autodiscover()
@@ -21,6 +28,9 @@ urlpatterns = patterns('',
     url(r'^enis/contact/$', direct_to_template,
         {'template': 'enis/contact.html'}, "enis_contact"),
     url(r'^admin/', include(admin.site.urls)),
+    # Needed to have admin's static files show up when using gunicorn
+    url(r'^' + admin_media_url , 'django.views.static.serve', {
+        'document_root': admin_media_path,}, name='admin-media'),
     url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^blog/', include('blog.urls')),
     # Needed to be able to run this app with gunicorn and have it serve static content

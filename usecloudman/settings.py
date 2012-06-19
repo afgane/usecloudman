@@ -75,6 +75,8 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, "static"),
 )
 
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
