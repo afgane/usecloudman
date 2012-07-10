@@ -4,6 +4,27 @@
 <div id="tagline">
     CloudMan's <em>features and uses</em>
 </div>
+<div class="desctxt">
+    This page talks about CloudMan, its features, and potential uses. CloudMan
+    is a cloud manager that orchestrates and manages a cloud infrastructure
+    allowing one to simply use the underlying infrastructure. It is primarily
+    being used in the context of Galaxy Cloud and CloudBioLinux but it can be
+    used for any purpose where a cluster in a cloud is desired. Read on about
+    descriptions of specific features.
+</div>
+<div id="toc-container">
+    <div id="toc">
+        <span id="subtag" style="padding-left: 10px">List of topics</span>
+        <ul>
+        {% for object in object_list %}
+        <li>
+            <a href="/blog{{object.get_absolute_url}}">
+                {{ object.title|truncatechars:27 }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+</div>
 {% for object in object_list %}
     <div class="content-strip" style="margin: 10px 0;">
         <div class="content-strip-header">

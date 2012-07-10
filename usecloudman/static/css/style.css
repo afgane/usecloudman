@@ -92,6 +92,14 @@ a {
     text-align: justify;
 }
 
+.desctxt {
+    font-size: 80%;
+    color: #777;   
+    width: 75%;
+    margin: 2em auto;
+    text-align: justify;
+}
+
 #big_links {
     text-align: center;
     margin-left: auto;
@@ -195,4 +203,19 @@ a {
     border-radius: 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
+}
+#toc-container {
+    float: right;
+    width: 200px;
+    margin-left: 20px;
+    border: solid 1px #777;
+    background-color: #EEE;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+#toc ul {
+    list-style: none;
+    padding-left: 10px;
+    font-size: 80%;
 }
