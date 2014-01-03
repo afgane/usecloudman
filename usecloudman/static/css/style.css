@@ -86,7 +86,7 @@ a {
 
 #subtag {
     font-size: 110%;
-    color: #777;   
+    color: #777;
     width: 40em;
     margin: 2em auto;
     text-align: justify;
@@ -94,7 +94,7 @@ a {
 
 .desctxt {
     font-size: 80%;
-    color: #777;   
+    color: #777;
     width: 75%;
     margin: 2em auto;
     text-align: justify;
@@ -218,4 +218,23 @@ a {
     list-style: none;
     padding-left: 10px;
     font-size: 80%;
+}
+#floater{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 275px;
+    height: 80px;
+    background-color: antiquewhite;
+    padding: 7px;
+    border-radius: 6px;
+    color: black;
+}
+#floater a {
+    color: blue;
+    text-decoration: underline;
+}
+#closer {
+    float: right;
+    font-size: 60%;
 }

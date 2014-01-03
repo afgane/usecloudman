@@ -4,5 +4,19 @@
             <a href="{% url home %}">CloudMan</a>
         </div>
     </div>
+    <div id="floater">
+        <a id="closer" href="#">Close</a>
+        In Europe in May? Come to Croatia for MIPRO 2014 for an <a href="http://www.mipro.hr/_Events_/tabid/110/language/en-US/Default.aspx?event=MIPRO2014.BioWork">
+        all-day workshop</a> on doing data analysis with Galaxy CloudMan.
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#closer').click(function(){
+          $('#floater').hide();
+        });
+      });
+    </script>
 </div>
 
