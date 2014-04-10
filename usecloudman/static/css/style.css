@@ -220,6 +220,7 @@ a {
     font-size: 80%;
 }
 #floater{
+    display: none;
     position: fixed;
     right: 20px;
     top: 20px;
